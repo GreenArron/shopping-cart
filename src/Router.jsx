@@ -4,19 +4,22 @@ import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
 
 const Router = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <App />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "shop/",
-          element: <Shop />,
-        },
-      ],
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <App />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "shop/",
+            element: <Shop />,
+          },
+        ],
+      },
+    ],
+    { basename: "/shoppingcart" },
+  );
 
   return <RouterProvider router={router} />;
 };
