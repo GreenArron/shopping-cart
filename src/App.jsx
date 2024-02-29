@@ -1,7 +1,7 @@
 import "./styles.css";
 
 function App() {
-  return <></>;
+  return <>Index: Under Construction 🚧</>;
 }
 
 export default App;
