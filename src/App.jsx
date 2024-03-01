@@ -19,9 +19,7 @@ function App() {
         </div>
       </nav>
 
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </>
   );
 }
