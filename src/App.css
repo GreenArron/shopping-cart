@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+:root {
+  --text: #2a222a;
+  --background: #fdfcfd;
+  --primary: #b68ca5;
+  --primary-backdrop: hsl(324 30% 40% / 1);
+  --secondary: #fea477;
+  --accent: #93adb4;
+
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--background);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+
+  padding: 1.5rem 7rem 1.5rem 5rem;
+  border-bottom: 2px solid var(--primary);
+  background-color: white;
+  box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#searchbar {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  background-color: white;
+  --search-border: 2px;
+  border: var(--search-border) solid var(--primary-backdrop);
+  border-radius: 24px;
+
+  margin: 8px 52px 0 48px;
+  padding: 8px 16px;
+}
+
+#searchbar input {
+  flex: 1;
+  color: var(--text);
+  font-size: 1.125rem;
+  background-color: white;
+  border: unset;
+}
+
+#searchbar input:focus {
+  border: none;
+  outline: none;
+}
+
+#searchbar:has(input:focus) {
+  border: 1px solid var(--text);
+}
+
+nav a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .logo-large {
+  color: var(--primary);
+  font-family: "Pacifico", cursive, Impact, Haettenschweiler, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+nav .right-side {
+  margin-top: 8px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
