@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap");
 
 :root {
-  --text: #2a222a;
-  --background: #fdfcfd;
-  --primary: #b68ca5;
-  --primary-backdrop: hsl(324 30% 40% / 1);
-  --secondary: #fea477;
-  --accent: #93adb4;
+  --text: #272716;
+  --background: #fefcf7;
+  --primary: hsl(39, 82%, 50%);
+  --primary-backdrop: hsl(39 60% 50% / 1);
+  --secondary: #e1e199;
+  --accent: hsl(216, 35%, 60%);
 
-  font-family: Arial, Helvetica, sans-serif;
+  --normal-font: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-family: var(--normal-font);
   line-height: 1.5;
   font-weight: 500;
 
@@ -45,7 +48,7 @@ nav {
   gap: 48px;
 
   padding: 1.5rem 7rem 1.5rem 5rem;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 2px solid var(--secondary);
   background-color: white;
   box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.2);
 }
@@ -98,17 +101,6 @@ nav .logo-large {
 
 nav .right-side {
   margin-top: 8px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
