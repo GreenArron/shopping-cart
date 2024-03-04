@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
+import Searchbar from "./components/Searchbar";
 
 function App() {
   return (
@@ -9,10 +10,7 @@ function App() {
           <span className="logo-large">Comfys</span>
         </Link>
 
-        <form id="searchbar">
-          <span>🔍</span>
-          <input aria-label="Search Bar" type="text" />
-        </form>
+        <Searchbar />
 
         <div className="right-side">
           <Link to="products">Shop</Link>

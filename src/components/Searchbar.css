@@ -1,0 +1,31 @@
+form.searchbar {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  background-color: white;
+  --search-border: 2px;
+  border: var(--search-border) solid var(--primary-backdrop);
+  border-radius: 24px;
+
+  margin: 8px 52px 0 48px;
+  padding: 8px 16px;
+}
+
+form.searchbar input {
+  flex: 1;
+  color: var(--text);
+  font-size: 1.125rem;
+  background-color: white;
+  border: unset;
+}
+
+form.searchbar input:focus {
+  border: none;
+  outline: none;
+}
+
+form.searchbar:has(input:focus) {
+  border: 2px solid var(--text);
+}
