@@ -1,8 +1,11 @@
-import { Link, Outlet } from "react-router-dom";
 import "./App.css";
-import Searchbar from "./components/Searchbar";
+import { Link, Outlet } from "react-router-dom";
+import { useState } from "react";
+import CartCounter from "./components/CartCounter";
 
 function App() {
+  const [cartCount, setCartCount] = useState(0);
+
   return (
     <>
       <nav>
@@ -10,14 +13,13 @@ function App() {
           <span className="logo-large">Comfys</span>
         </Link>
 
-        <Searchbar />
-
         <div className="right-side">
           <Link to="products">Shop</Link>
+          <CartCounter count={cartCount} />
         </div>
       </nav>
 
-      <Outlet />
+      <Outlet context={[cartCount, setCartCount]} />
     </>
   );
 }

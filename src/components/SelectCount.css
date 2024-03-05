@@ -1,0 +1,19 @@
+.select-count {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.select-count button {
+  background-color: unset;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 1px 6px;
+}
+
+.select-count span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

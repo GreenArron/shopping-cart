@@ -1,0 +1,26 @@
+.cart-counter {
+  position: relative;
+}
+
+.cart-counter svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--primary);
+}
+
+.cart-counter .cart-count {
+  user-select: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: -0.5rem;
+  right: -0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  color: var(--primary);
+  font-size: 1rem;
+  border-radius: 50%;
+}
