@@ -42,11 +42,10 @@ Product.propTypes = {
 
 function Shop() {
   // eslint-disable-next-line no-unused-vars
-  const [cartCount, setCartCount] = useOutletContext();
+  const [cart, setCart] = useOutletContext();
   const [category, setCategory] = useState(null);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [cart, setCart] = useState({});
 
   function changeCart(func, productId) {
     const change = func(0);
@@ -58,7 +57,6 @@ function Shop() {
       setCart((currCart) => {
         return { ...currCart, [productId]: newCount };
       });
-      setCartCount((currCount) => currCount + changed);
     }
   }
 

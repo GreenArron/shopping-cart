@@ -4,7 +4,11 @@ import { useState } from "react";
 import CartCounter from "./components/CartCounter";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cart, setCart] = useState({});
+  const cartCount = Object.values(cart).reduce(
+    (perv, count) => perv + count,
+    0,
+  );
 
   return (
     <>
@@ -19,7 +23,7 @@ function App() {
         </div>
       </nav>
 
-      <Outlet context={[cartCount, setCartCount]} />
+      <Outlet context={[cart, setCart]} />
     </>
   );
 }
