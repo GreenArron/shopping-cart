@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import "./Shop.css";
-import { Filter, FilterItem } from "../components/Filter";
-import { fetchProducts, fetchCategories } from "../utils/fakestore-api";
+import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import PropTypes from "prop-types";
+import Filter from "../components/Filter";
 import StarRating from "../components/StarRating";
 import SelectCount from "../components/SelectCount";
-import { useOutletContext } from "react-router-dom";
+import { fetchProducts, fetchCategories } from "../utils/fakestore-api";
 
 function Product({ title, image, price, rating, inCartCount, onCountChange }) {
   return (
@@ -43,9 +43,19 @@ Product.propTypes = {
 function Shop() {
   // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useOutletContext();
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState("All");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetchCategories().then((allCategories) => setCategories(allCategories));
+  }, []);
+
+  useEffect(() => {
+    fetchProducts({ category: category }).then((newProducts) =>
+      setProducts(newProducts),
+    );
+  }, [category]);
 
   function changeCart(func, productId) {
     const change = func(0);
@@ -60,22 +70,17 @@ function Shop() {
     }
   }
 
-  useEffect(() => {
-    fetchCategories().then((allCategories) => setCategories(allCategories));
-  }, []);
-
-  useEffect(() => {
-    fetchProducts({ category: category }).then((newProducts) =>
-      setProducts(newProducts),
-    );
-  }, [category]);
-
   return (
     <main className="shop">
       <section className="controls" aria-label="filter controls">
-        <Filter name="Filter" />
+        <Filter
+          name="Category"
+          options={["All", ...categories]}
+          currentFilter={category}
+          setFilter={setCategory}
+        />
 
-        <Filter name="Sort By" />
+        <Filter name="Sort By" options={["Rating", "Price", "Popularity"]} />
       </section>
       <section className="products" aria-label="shop items">
         {products.map((product) => {

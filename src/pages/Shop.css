@@ -7,6 +7,8 @@ main.shop {
 
 main.shop section.controls {
   width: 100%;
+  padding: 0 0.5rem;
+  margin: 0.2rem 0 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -14,7 +16,7 @@ main.shop section.controls {
 main.shop section.products {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
 }
