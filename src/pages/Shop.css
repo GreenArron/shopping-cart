@@ -16,9 +16,9 @@ main.shop section.controls {
 main.shop section.products {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
 main.shop .shop-product {
