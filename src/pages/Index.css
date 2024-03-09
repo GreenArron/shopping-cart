@@ -1,10 +1,19 @@
 main.index {
+  background: var(--secondary) url("/spacejoy-808a4AWu8jE-unsplash.jpg")
+    no-repeat center;
+  background-size: cover;
   width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   line-height: 1.2;
   font-size: 1.75rem;
+}
+
+main.index .center-container {
+  width: 100%;
 }
 
 p.index-message {
@@ -16,7 +25,7 @@ p.index-message {
   display: block;
   user-select: none;
 
-  background: var(--primary);
+  background: var(--primary-opaque);
 }
 
 .index-text-special {
@@ -39,8 +48,8 @@ p.index-message {
   background-color: var(--accent);
   padding: 8px 16px 12px;
   border-top: 2px solid white;
-  border-radius: 0 0 18px 18px;
-  margin: 0 0;
+  border-radius: 24px;
+  margin: 48px 0 0;
 }
 
 .index-sample a {
@@ -49,4 +58,21 @@ p.index-message {
 
 .index-sample a:visited {
   color: inherit;
+}
+
+a.index-credits {
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+
+  color: white;
+  --stoke-color: hsla(0, 0%, 24%, 0.8);
+  text-shadow:
+    -1px -1px 0 var(--stoke-color),
+    1px -1px 0 var(--stoke-color),
+    -1px 1px 0 var(--stoke-color),
+    1px 1px 0 var(--stoke-color);
+  background-color: rgba(0, 0, 0, 0.1);
 }
