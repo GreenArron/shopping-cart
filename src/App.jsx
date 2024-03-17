@@ -19,7 +19,19 @@ function App() {
 
         <div className="right-side">
           <Link to="products">Shop</Link>
-          <CartCounter count={cartCount} />
+
+          {cartCount > 0 ? (
+            <Link
+              to="products/checkout"
+              aria-label={`Checkout ${cartCount} items`}
+            >
+              <CartCounter count={cartCount} />
+            </Link>
+          ) : (
+            <Link to="#" aria-label="Checkout (empty cart)">
+              <CartCounter count={cartCount} />
+            </Link>
+          )}
         </div>
       </nav>
 

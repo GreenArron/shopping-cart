@@ -6,6 +6,7 @@ import Filter from "../components/Filter";
 import StarRating from "../components/StarRating";
 import SelectCount from "../components/SelectCount";
 import { fetchProducts, fetchCategories } from "../utils/fakestore-api";
+import { Outlet } from "react-router-dom";
 
 function Product({ title, image, price, rating, inCartCount, onCountChange }) {
   return (
@@ -102,6 +103,7 @@ function Shop() {
     const change = func(0);
     const currentCount = cart[productId] === undefined ? 0 : cart[productId];
     const newCount = Math.max(currentCount + change, 0);
+    // need to calculate again incase change is negative and count is 0
     const changed = newCount - currentCount;
 
     if (changed !== 0) {
@@ -142,6 +144,7 @@ function Shop() {
           );
         })}
       </section>
+      <Outlet context={[cart, setCart, products]} />
     </main>
   );
 }

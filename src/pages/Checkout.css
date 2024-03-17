@@ -1,0 +1,144 @@
+.checkout-backdrop {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: brightness(60%);
+}
+
+section.checkout {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 28rem;
+  max-height: 65vh;
+
+  background-color: hsl(0, 0%, 94%);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+section.checkout .checkout-main {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+section.checkout .checkout-cart {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 78%;
+  gap: 1.5rem;
+  min-height: 18rem;
+  margin: 0 1rem;
+  padding: 1rem 1rem;
+
+  background-color: hsl(0, 0%, 80%);
+  border-radius: 18px;
+
+  scrollbar-color: hsl(0, 0%, 80%) white;
+  scrollbar-width: thin;
+}
+
+.checkout-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+
+  margin-top: 4px;
+
+  --product-card-width: 18rem;
+  width: var(--product-card-width);
+  height: auto;
+  font-weight: 600;
+  padding: 16px 8px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.checkout-product img {
+  aspect-ratio: 1 / 1;
+  max-width: 8rem;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.checkout-product .product-info {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkout-product .product-name {
+  max-width: max(2rem, calc(var(--product-card-width) - 2rem));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: contain;
+}
+
+.checkout-product .rating {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding-left: 4ch;
+}
+
+.checkout-product .price {
+  background-color: #5eba5e;
+  color: white;
+  width: fit-content;
+  align-self: center;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.checkout-product .buy-controls {
+  width: 80%;
+  display: flex;
+  justify-content: end;
+}
+
+.checkout-decide {
+  height: 100%;
+  align-self: center;
+  background-color: white;
+  width: 18rem;
+  margin: 1rem;
+  padding: 1rem 1rem 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-decide ul.checkout-info {
+  list-style: none;
+}
+
+.checkout-decide ul.checkout-info li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkout-decide button {
+  width: fit-content;
+  padding: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.checkout-decide button.checkout {
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: hsl(50, 60%, 50%);
+  margin: 0 auto;
+}
