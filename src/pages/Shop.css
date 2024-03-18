@@ -13,6 +13,36 @@ main.shop section.controls {
   justify-content: space-between;
 }
 
+main.shop .sort-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+main.shop .sort-container .sortorder {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 70%;
+
+  transition: transform 120ms ease-in-out;
+}
+
+main.shop .sort-container .sortorder.up {
+  transform: rotate(180deg);
+}
+
+main.shop .sort-container .sortorder svg {
+  width: 2em;
+}
+
 main.shop section.products {
   width: 100%;
   display: flex;

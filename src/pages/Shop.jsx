@@ -1,12 +1,18 @@
 import "./Shop.css";
-import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { useOutletContext, Outlet } from "react-router-dom";
+import { fetchProducts, fetchCategories } from "../utils/fakestore-api";
 import Filter from "../components/Filter";
 import StarRating from "../components/StarRating";
 import SelectCount from "../components/SelectCount";
-import { fetchProducts, fetchCategories } from "../utils/fakestore-api";
-import { Outlet } from "react-router-dom";
+import SwitchBool from "../components/SwitchBool";
+
+const CHEVRON_SVG = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+  </svg>
+);
 
 function Product({ title, image, price, rating, inCartCount, onCountChange }) {
   return (
@@ -80,6 +86,7 @@ function Shop() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [sortBy, setSortBy] = useState(null);
+  const [sortAscending, setSortAscending] = useState(false);
 
   const filteredProducts =
     category === "All" || category === undefined
@@ -87,7 +94,11 @@ function Shop() {
       : products.filter(
           (value) => value.category.toLowerCase() === category.toLowerCase(),
         );
-  const sortedProducts = getSortedProducts(filteredProducts, sortBy);
+  const sortedProducts = getSortedProducts(
+    filteredProducts,
+    sortBy,
+    !sortAscending,
+  );
 
   useEffect(() => {
     fetchCategories().then((allCategories) => setCategories(allCategories));
@@ -122,13 +133,21 @@ function Shop() {
           currentFilter={category}
           setFilter={setCategory}
         />
-
-        <Filter
-          name="Sort By"
-          options={["Rating", "Price", "Popularity"]}
-          currentFilter={sortBy}
-          setFilter={setSortBy}
-        />
+        <div className="sort-container">
+          <SwitchBool
+            bool={sortAscending}
+            setBool={setSortAscending}
+            className={"sortorder"}
+          >
+            {CHEVRON_SVG}
+          </SwitchBool>
+          <Filter
+            name="Sort By"
+            options={["Rating", "Price", "Popularity"]}
+            currentFilter={sortBy}
+            setFilter={setSortBy}
+          />
+        </div>
       </section>
       <section className="products" aria-label="shop items">
         {sortedProducts.map((product) => {
