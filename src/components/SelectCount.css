@@ -1,6 +1,10 @@
 .select-count {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  /* this keeps the height the same */
+  /* when it transitions from button.add-cart to SelectCount */
+  margin-bottom: 1.25rem;
 }
 
 .select-count button {

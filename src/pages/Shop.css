@@ -85,6 +85,10 @@ main.shop .shop-product .product-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  /* h3 stuff */
+  font-size: 1.125rem;
+  margin: 0.5rem 0;
 }
 
 main.shop .shop-product .rating {
@@ -106,6 +110,25 @@ main.shop .shop-product .price {
 
 main.shop .shop-product .buy-controls {
   width: 80%;
+  margin-top: 4px;
   display: flex;
   justify-content: end;
+}
+
+main.shop .shop-product .buy-controls button.cart-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+
+  padding: 0.5rem;
+
+  background-color: var(--primary);
+}
+
+main.shop .shop-product .buy-controls button.cart-add svg {
+  display: flex;
+  align-items: center;
+  width: 1.25rem;
+  margin-right: 4px;
 }
