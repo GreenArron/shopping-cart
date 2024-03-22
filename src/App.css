@@ -99,10 +99,12 @@ button {
     transform 300ms ease-in-out;
 }
 
-button:hover {
+button:hover,
+.button-like:hover {
   filter: brightness(0.95);
 }
 
-button:active {
+button:active,
+.button-like:active {
   transform: scale(1.025);
 }
