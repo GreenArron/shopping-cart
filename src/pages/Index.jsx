@@ -9,9 +9,7 @@ export default function Index() {
           <span className="index-text-special">Feel life With</span> Comfys
         </p>
         <section className="index-sample">
-          <Link to="products">
-            <h1>Shop Now</h1>
-          </Link>
+          <Link to="products">Shop Now</Link>
         </section>
       </div>
 
