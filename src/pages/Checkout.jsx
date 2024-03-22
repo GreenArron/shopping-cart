@@ -1,7 +1,7 @@
 import "./Checkout.css";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 import { round } from "../utils/commons";
 import LinkButton from "../components/LinkButton";
@@ -38,6 +38,7 @@ CheckoutItem.propTypes = {
 };
 
 function Checkout() {
+  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [cart, setCart, products] = useOutletContext();
   const boughtProducts = products
@@ -69,7 +70,7 @@ function Checkout() {
   }
 
   return (
-    <div className="checkout-backdrop">
+    <div onClick={() => navigate("/products")} className="checkout-backdrop">
       <section className="checkout">
         <h1>Your Cart:</h1>
 
