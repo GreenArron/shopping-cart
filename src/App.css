@@ -106,5 +106,5 @@ button:hover,
 
 button:active,
 .button-like:active {
-  transform: scale(1.025);
+  transform: scale(1.05);
 }
