@@ -1,6 +1,6 @@
 .select-count {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  gap: 8px;
 
   /* this keeps the height the same (hacky ik) */
   /* when it transitions from button.add-cart to SelectCount */
@@ -8,12 +8,27 @@
 }
 
 .select-count button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: unset;
   color: var(--accent);
   border: 1px solid var(--accent);
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   padding: 1px 6px;
+}
+
+.select-count button:has(svg) {
+  padding: 0;
+  border-color: hsl(0, 50%, 50%);
+}
+
+.select-count button svg {
+  fill: hsl(0, 50%, 50%);
+  width: 1.5rem;
+  margin: 0 auto;
 }
 
 .select-count span {
