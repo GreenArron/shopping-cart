@@ -62,6 +62,17 @@ nav a {
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
+  transition:
+    filter 300ms ease-in-out,
+    transform 70ms ease-in-out;
+}
+
+nav a:hover {
+  filter: brightness(1.1);
+}
+
+nav a:active {
+  transform: scale(1.1);
 }
 
 nav .logo-large {
@@ -70,6 +81,10 @@ nav .logo-large {
   font-weight: 500;
   font-style: normal;
   font-size: 2rem;
+}
+
+nav a:active:has(.logo-large) {
+  transform: scale(1.2, 1.1);
 }
 
 nav .right-side {
