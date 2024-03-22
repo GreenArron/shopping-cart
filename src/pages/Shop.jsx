@@ -7,6 +7,7 @@ import Filter from "../components/Filter";
 import StarRating from "../components/StarRating";
 import SelectCount from "../components/SelectCount";
 import SwitchBool from "../components/SwitchBool";
+import _ from "lodash";
 
 const CHEVRON_SVG = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -122,13 +123,13 @@ function Shop() {
   }, [category]);
 
   function changeCart(func, productId) {
-    const change = func(0);
     const currentCount = cart[productId] === undefined ? 0 : cart[productId];
-    const newCount = Math.max(currentCount + change, 0);
-    // need to calculate again incase change is negative and count is 0
+    const newCount = Math.max(func(currentCount), 0);
     const changed = newCount - currentCount;
 
-    if (changed !== 0) {
+    if (changed < 0 && newCount === 0) {
+      setCart((currCart) => _.omit(currCart, productId));
+    } else if (changed !== 0) {
       setCart((currCart) => {
         return { ...currCart, [productId]: newCount };
       });
