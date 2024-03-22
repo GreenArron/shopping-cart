@@ -4,7 +4,7 @@
 
   /* this keeps the height the same (hacky ik) */
   /* when it transitions from button.add-cart to SelectCount */
-  margin: 0.5625rem 0;
+  margin: 0.3125rem 0;
 }
 
 .select-count button {
