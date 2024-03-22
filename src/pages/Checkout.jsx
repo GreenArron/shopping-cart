@@ -1,10 +1,12 @@
 import "./Checkout.css";
 import PropTypes from "prop-types";
+import _ from "lodash";
 import { useOutletContext } from "react-router-dom";
+
+import { round } from "../utils/commons";
+import LinkButton from "../components/LinkButton";
 import SelectCount from "../components/SelectCount";
 import Draggable from "../components/Draggable";
-import _ from "lodash";
-import { round } from "../utils/commons";
 
 function CheckoutItem({ title, image, price, cartCount, onCountChange }) {
   return (
@@ -91,8 +93,11 @@ function Checkout() {
               </li>
             </ul>
             <button className="checkout" onClick={confirmPurchase}>
-              Confirm Purchase
+              Purchase
             </button>
+            <LinkButton className="continue" to="/products">
+              Continue Shopping
+            </LinkButton>
           </div>
         </div>
       </section>
