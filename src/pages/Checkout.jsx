@@ -53,14 +53,12 @@ function Checkout() {
     const newCount = Math.max(func(currentCount), 0);
     const changed = newCount - currentCount;
 
-    if (changed !== 0) {
-      if (newCount === 0) {
-        setCart((currCart) => _.omit(currCart, productId));
-      } else {
-        setCart((currCart) => {
-          return { ...currCart, [productId]: newCount };
-        });
-      }
+    if (changed < 0 && newCount === 0) {
+      setCart((currCart) => _.omit(currCart, productId));
+    } else if (changed !== 0) {
+      setCart((currCart) => {
+        return { ...currCart, [productId]: newCount };
+      });
     }
   }
 
