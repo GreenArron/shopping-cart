@@ -149,7 +149,7 @@ function Shop() {
           <SwitchBool
             bool={sortAscending}
             setBool={setSortAscending}
-            className={"sortorder"}
+            className={`sortorder ${sortBy === null ? "disabled" : ""}`}
           >
             {CHEVRON_SVG}
           </SwitchBool>

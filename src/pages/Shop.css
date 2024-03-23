@@ -35,6 +35,12 @@ main.shop .sort-container .sortorder {
   transition: transform 120ms ease-in-out;
 }
 
+main.shop .sort-container .sortorder.disabled {
+  transform: translate(40px, 0);
+  opacity: 0;
+  pointer-events: none;
+}
+
 main.shop .sort-container .sortorder.up {
   transform: rotate(180deg);
 }
