@@ -111,7 +111,7 @@ button {
   cursor: pointer;
   transition:
     filter 300ms ease-out,
-    transform 300ms ease-in-out;
+    transform 300ms ease-out;
 }
 
 button:hover,
@@ -121,5 +121,5 @@ button:hover,
 
 button:active,
 .button-like:active {
-  transform: scale(1.05);
+  transform: scale(0.9);
 }
