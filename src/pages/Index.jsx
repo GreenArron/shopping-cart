@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <main className="index">
       <div className="center-container">
-        <p className="index-message">
+        <p aria-label="tagline" className="index-message">
           <span className="index-text-special">Feel life With</span> Comfys
         </p>
         <section className="index-sample">
