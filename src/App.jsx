@@ -23,7 +23,8 @@ function App() {
           {cartCount > 0 ? (
             <Link
               to="products/checkout"
-              aria-label={`Checkout ${cartCount} items`}
+              aria-label="Checkout"
+              aria-description={`Checkout ${cartCount} items`}
             >
               <CartCounter count={cartCount} />
             </Link>
