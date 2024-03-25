@@ -22,7 +22,7 @@ const CART_SVG = (
 
 function Product({ title, image, price, rating, inCartCount, onCountChange }) {
   return (
-    <div className="shop-product">
+    <article className="shop-product">
       <img src={image} />
       <div className="product-info">
         <h3 className="product-name">{title}</h3>
@@ -41,7 +41,7 @@ function Product({ title, image, price, rating, inCartCount, onCountChange }) {
           <SelectCount count={inCartCount} setCount={onCountChange} />
         )}
       </div>
-    </div>
+    </article>
   );
 }
 
