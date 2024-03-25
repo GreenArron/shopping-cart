@@ -10,11 +10,13 @@ const BIN_SVG = (
 function SelectCount({ count, setCount }) {
   return (
     <div className="select-count">
-      <button onClick={() => setCount((val) => val - 1)}>
+      <button aria-label="decrease" onClick={() => setCount((val) => val - 1)}>
         {count !== 1 ? "-" : BIN_SVG}
       </button>
       <span>{count}</span>
-      <button onClick={() => setCount((val) => val + 1)}>+</button>
+      <button aria-label="increase" onClick={() => setCount((val) => val + 1)}>
+        +
+      </button>
     </div>
   );
 }
