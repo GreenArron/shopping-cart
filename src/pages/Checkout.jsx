@@ -10,7 +10,7 @@ import Draggable from "../components/Draggable";
 
 function CheckoutItem({ title, image, price, cartCount, onCountChange }) {
   return (
-    <div className="checkout-product">
+    <article className="checkout-product">
       <img src={image} />
       <div className="product-info">
         <div className="product-name">{title}</div>
@@ -19,7 +19,7 @@ function CheckoutItem({ title, image, price, cartCount, onCountChange }) {
       <div className="buy-controls">
         <SelectCount count={cartCount} setCount={onCountChange} />
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -75,7 +75,7 @@ function Checkout() {
         <h1>Your Cart:</h1>
 
         <div className="checkout-main">
-          <Draggable rootClass="checkout-cart">
+          <Draggable aria-label="Current Cart" rootClass="checkout-cart">
             {boughtProducts.map((product) => {
               return (
                 <CheckoutItem
