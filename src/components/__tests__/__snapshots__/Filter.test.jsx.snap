@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches the last approved snapshots 1`] = `
+<div>
+  <div
+    class="_filter-container_e8fa16"
+  >
+    <button>
+      testfilter: testselected
+    </button>
+    <div
+      class="_filter-content_e8fa16 false"
+    />
+  </div>
+</div>
+`;
+
+exports[`matches the last approved snapshots 2`] = `
+<div>
+  <div
+    class="_filter-container_e8fa16"
+  >
+    <button>
+      testfilter: testselected
+    </button>
+    <div
+      class="_filter-content_e8fa16 _float_e8fa16"
+    >
+      <button
+        class="_filter-option_e8fa16 false"
+      >
+        Testdefault
+      </button>
+      <button
+        class="_filter-option_e8fa16 _selected_e8fa16"
+      >
+        Testselected
+      </button>
+    </div>
+  </div>
+</div>
+`;
