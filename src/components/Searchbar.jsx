@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./Searchbar.css";
 
-function Searchbar(onChange) {
+function Searchbar({ onChange }) {
   return (
     <form className="searchbar">
       <span>🔍</span>
