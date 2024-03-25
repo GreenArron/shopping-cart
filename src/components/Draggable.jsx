@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useRef, RefObject } from "react";
 
-function Draggable({ innerRef, rootClass = "", children }) {
+function Draggable({ innerRef, rootClass = "", children, ...other }) {
   const ourRef = useRef(null);
   const slider = innerRef === undefined ? ourRef.current : innerRef.current;
   const [startX, setStartX] = useState(null);
@@ -43,6 +43,7 @@ function Draggable({ innerRef, rootClass = "", children }) {
       onMouseUp={handleScrollStop}
       onMouseMove={handleMouseMove}
       className={rootClass}
+      {...other}
     >
       {children}
     </div>
