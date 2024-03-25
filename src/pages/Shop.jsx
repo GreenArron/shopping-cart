@@ -185,3 +185,5 @@ Shop.propTypes = {
   setCartCount: PropTypes.func,
 };
 export default Shop;
+// testing purposes
+export { Product };
