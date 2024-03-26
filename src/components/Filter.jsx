@@ -7,7 +7,14 @@ function capitalizeCase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function Filter({ name, currentFilter, setFilter, options, defaultOption }) {
+function Filter({
+  name,
+  currentFilter,
+  setFilter,
+  options,
+  defaultOption,
+  ...other
+}) {
   const [active, setActive] = useState(false);
   const filterRef = useRef(null);
   const usedOptions =
@@ -32,6 +39,7 @@ function Filter({ name, currentFilter, setFilter, options, defaultOption }) {
       <button onClick={() => setActive((value) => !value)}>{shownName}</button>
       <div
         className={`${styles["filter-content"]} ${active && styles["float"]}`}
+        {...other}
       >
         {active &&
           usedOptions.map((option) => {
