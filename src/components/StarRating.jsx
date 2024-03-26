@@ -19,7 +19,10 @@ const FULL_STAR = (
 
 function StarRating({ rating, total }) {
   return (
-    <div className="star-rating">
+    <div
+      className="star-rating"
+      aria-label={`rating: ${rating} out of ${total}`}
+    >
       {[...Array(total)].map((value, index) => {
         const remaining = rating - index;
         if (remaining >= 1) {

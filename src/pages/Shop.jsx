@@ -34,7 +34,11 @@ function Product({ title, image, price, rating, inCartCount, onCountChange }) {
       </div>
       <div className="buy-controls">
         {inCartCount === 0 ? (
-          <button className="cart-add" onClick={() => onCountChange(() => 1)}>
+          <button
+            className="cart-add"
+            onClick={() => onCountChange(() => 1)}
+            aria-description="adds this item to cart"
+          >
             {CART_SVG} <span aria-description="adds item to cart">Add</span>
           </button>
         ) : (
@@ -144,6 +148,7 @@ function Shop() {
           options={["All", ...categories]}
           currentFilter={category}
           setFilter={setCategory}
+          aria-label="filter by category"
         />
         <div className="sort-container">
           <SwitchBool
@@ -158,6 +163,7 @@ function Shop() {
             options={["Rating", "Price", "Popularity"]}
             currentFilter={sortBy}
             setFilter={setSortBy}
+            aria-label="sort by"
           />
         </div>
       </section>
