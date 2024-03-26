@@ -100,6 +100,11 @@ nav .right-side a {
   margin-right: 8px;
 }
 
+nav .right-side a:first-child {
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
