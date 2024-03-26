@@ -19,6 +19,7 @@ exports[`matches last approved render 1`] = `
             Category: All
           </button>
           <div
+            aria-label="filter by category"
             class="_filter-content_e8fa16 false"
           />
         </div>
@@ -44,6 +45,7 @@ exports[`matches last approved render 1`] = `
               Sort By
             </button>
             <div
+              aria-label="sort by"
               class="_filter-content_e8fa16 false"
             />
           </div>
@@ -71,6 +73,7 @@ exports[`matches last approved render 1`] = `
               class="rating"
             >
               <div
+                aria-label="rating: 5 out of 5"
                 class="star-rating"
               >
                 <span
@@ -153,6 +156,7 @@ exports[`matches last approved render 1`] = `
             class="buy-controls"
           >
             <button
+              aria-description="adds this item to cart"
               class="cart-add"
             >
               <svg

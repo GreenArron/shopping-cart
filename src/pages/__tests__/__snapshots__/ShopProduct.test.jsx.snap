@@ -20,6 +20,7 @@ exports[`matches last approved render (cartCount: 0) 1`] = `
         class="rating"
       >
         <div
+          aria-label="rating: 5 out of 5"
           class="star-rating"
         >
           <span
@@ -102,6 +103,7 @@ exports[`matches last approved render (cartCount: 0) 1`] = `
       class="buy-controls"
     >
       <button
+        aria-description="adds this item to cart"
         class="cart-add"
       >
         <svg
@@ -144,6 +146,7 @@ exports[`matches last approved render (cartCount: 1) 1`] = `
         class="rating"
       >
         <div
+          aria-label="rating: 5 out of 5"
           class="star-rating"
         >
           <span
