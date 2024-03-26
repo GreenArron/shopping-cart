@@ -74,8 +74,8 @@ main.shop .shop-product {
 
 main.shop .shop-product img {
   aspect-ratio: 1 / 1;
-  max-width: 22rem;
-  height: auto;
+  width: 22rem;
+
   object-fit: contain;
 }
 
