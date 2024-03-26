@@ -7,6 +7,7 @@ import { round } from "../utils/commons";
 import LinkButton from "../components/LinkButton";
 import SelectCount from "../components/SelectCount";
 import Draggable from "../components/Draggable";
+import { useRef } from "react";
 
 function CheckoutItem({ title, image, price, cartCount, onCountChange }) {
   return (
@@ -39,6 +40,7 @@ CheckoutItem.propTypes = {
 
 function Checkout() {
   const navigate = useNavigate();
+  const cartAreaRef = useRef(null);
   // eslint-disable-next-line no-unused-vars
   const [cart, setCart, products] = useOutletContext();
   const boughtProducts = products
@@ -69,9 +71,15 @@ function Checkout() {
     alert("You bought it! (imaginary redirect)");
   }
 
+  function navigateToProducts(e) {
+    if (cartAreaRef.current && !cartAreaRef.current.contains(e.target)) {
+      navigate("/products");
+    }
+  }
+
   return (
-    <div onClick={() => navigate("/products")} className="checkout-backdrop">
-      <section className="checkout">
+    <div onClick={navigateToProducts} className="checkout-backdrop">
+      <section className="checkout" ref={cartAreaRef}>
         <h1>Your Cart:</h1>
 
         <div className="checkout-main">
