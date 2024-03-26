@@ -154,3 +154,40 @@ section.checkout .checkout-cart {
   margin-top: 0.5rem;
   background-color: hsl(97, 55%, 60%);
 }
+
+@media (width < 600px) {
+  main.shop:has(.checkout-backdrop) {
+    padding: 0;
+  }
+
+  main.shop section.controls:has(~ .checkout-backdrop) {
+    display: none;
+  }
+
+  main.shop section.products:has(~ .checkout-backdrop) {
+    display: none;
+  }
+
+  .checkout-backdrop {
+    position: static;
+  }
+
+  section.checkout {
+    position: absolute;
+    min-height: unset;
+    max-height: unset;
+  }
+
+  section.checkout .checkout-main {
+    flex-direction: column;
+  }
+
+  section.checkout .checkout-cart {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    gap: 0.75rem;
+    scrollbar-color: white hsl(0, 0%, 80%);
+    scrollbar-width: thin;
+  }
+}
