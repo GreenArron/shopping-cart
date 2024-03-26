@@ -46,19 +46,21 @@ p.index-message {
   font-weight: bold;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
   background-color: var(--accent);
   padding: 8px 16px 12px;
   border-top: 2px solid white;
   border-radius: 24px;
   margin: 48px 0 0;
-}
-
-.index-sample a {
-  text-decoration: none;
+  transition: transform 170ms ease-out;
 }
 
 .index-sample a:visited {
   color: initial;
+}
+
+.index-sample a:hover {
+  transform: scale(1.1);
 }
 
 a.index-credits {
