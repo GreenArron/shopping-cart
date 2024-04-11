@@ -49,7 +49,10 @@ function Checkout() {
       return { ...product, cartCount: cart[product.id] };
     });
   const totalPrice = round(
-    boughtProducts.reduce((currTotal, product) => currTotal + product.price, 0),
+    boughtProducts.reduce(
+      (currTotal, product) => currTotal + product.price * product.cartCount,
+      0,
+    ),
     2,
   );
 
